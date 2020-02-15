@@ -4,7 +4,7 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier
 from sklearn.model_selection import train_test_split
-from sklearn import cross_validation
+#from sklearn import cross_validation
 import time
 
 
