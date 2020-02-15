@@ -11,12 +11,17 @@ import time
 malDataSet = pandas.read_csv('dataset.csv', sep=';')#low_memory=False, error_bad_lines=False
 
 origin_headers = list(malDataSet.columns.values)
-print origin_headers
+
 total_data = malDataSet[origin_headers[:-1]]
 total_data = total_data.as_matrix()
 target_strings = malDataSet[origin_headers[-1]]
 
 train, test, target_train, target_test = train_test_split(total_data, target_strings, test_size=0.33, random_state=int(time.time()))
+
+clf = RandomForestClassifier(n_estimators=100)
+clf.fit(train, target_train)
+score = clf.score(test, target_test)
+print(score)
 
 classifiers = [
     RandomForestClassifier(n_estimators=100),
