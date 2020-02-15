@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import time
 
 #Android_Feats
-malDataSet = pandas.read_csv('dataset.csv', sep=';')#low_memory=False, error_bad_lines=False
+malDataSet = pandas.read_csv('Android_Feats.csv')#, sep=';'
 
 origin_headers = list(malDataSet.columns.values)
 
