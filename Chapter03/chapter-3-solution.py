@@ -1,7 +1,8 @@
 import pandas
 import sklearn
 from sklearn.feature_selection import SelectFromModel
-from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier, DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier, AdaBoostClassifier
 from sklearn.model_selection import train_test_split
 from sklearn import cross_validation
 import time
