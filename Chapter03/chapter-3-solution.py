@@ -18,13 +18,18 @@ target_strings = malDataSet[origin_headers[-1]]
 
 train, test, target_train, target_test = train_test_split(total_data, target_strings, test_size=0.33, random_state=int(time.time()))
 
-clf = RandomForestClassifier(n_estimators=100)
-clf.fit(train, target_train)
-score = clf.score(test, target_test)
-print(score)
+#clf = RandomForestClassifier(n_estimators=100)
+#
+#
+
 
 classifiers = [
     RandomForestClassifier(n_estimators=100),
     DecisionTreeClassifier(),
     AdaBoostClassifier()
 ]
+
+for clf in classifiers:
+    clf.fit(train, target_train)
+    score = clf.score(test, target_test)
+    print(score)
