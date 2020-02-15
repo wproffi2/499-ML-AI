@@ -11,7 +11,7 @@ import time
 malDataSet = pandas.read_csv('dataset.csv', sep=';')#low_memory=False, error_bad_lines=False
 
 origin_headers = list(malDataSet.columns.values)
-
+print origin_headers
 total_data = malDataSet[origin_headers[:-1]]
 total_data = total_data.as_matrix()
 target_strings = malDataSet[origin_headers[-1]]
