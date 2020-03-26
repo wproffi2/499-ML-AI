@@ -20,13 +20,6 @@ target_strings = malDataSet[origin_headers[-1]]
 train, test, target_train, target_test = train_test_split(total_data, target_strings, test_size=0.33, random_state=int(time.time()))
 
 
-"""
-classifiers = [
-    RandomForestClassifier(n_estimators=100),
-    DecisionTreeClassifier(),
-    AdaBoostClassifier()
-]
-"""
 
 classifiers = {
     "Random Forest Classifier": RandomForestClassifier(n_estimators=100),
