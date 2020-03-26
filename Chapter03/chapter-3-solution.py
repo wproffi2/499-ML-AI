@@ -9,6 +9,7 @@ import time
 
 #Android_Feats
 malDataSet = pandas.read_csv('Android_Feats.csv')#, sep=';'
+#malDataSet = pandas.read_csv('dataset.csv')#, sep=';'
 
 origin_headers = list(malDataSet.columns.values)
 
@@ -18,18 +19,23 @@ target_strings = malDataSet[origin_headers[-1]]
 
 train, test, target_train, target_test = train_test_split(total_data, target_strings, test_size=0.33, random_state=int(time.time()))
 
-#clf = RandomForestClassifier(n_estimators=100)
-#
-#
 
-
+"""
 classifiers = [
     RandomForestClassifier(n_estimators=100),
     DecisionTreeClassifier(),
     AdaBoostClassifier()
 ]
+"""
 
-for clf in classifiers:
+classifiers = {
+    "Random Forest Classifier": RandomForestClassifier(n_estimators=100),
+    "Decision Tree Classifier": DecisionTreeClassifier(),
+    "AdaBoost Classifier": AdaBoostClassifier()
+}
+
+for name, clf in classifiers.items():
     clf.fit(train, target_train)
     score = clf.score(test, target_test)
-    print(score)
+    print(name, score)
+
